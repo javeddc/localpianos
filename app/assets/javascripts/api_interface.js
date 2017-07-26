@@ -1,4 +1,4 @@
-var locationSearch = function () {
+function locationSearch() {
   var settings = {
     url: '/api_search_test',
     data: {
@@ -11,7 +11,7 @@ var locationSearch = function () {
 }
 $('#search_btn').click(locationSearch)
 
-var searchCoordinates = function (input_latitude, input_longitude) {
+function searchCoordinates(input_latitude, input_longitude) {
 var settings = {
   url: '/api_search_coordinates',
   data: {

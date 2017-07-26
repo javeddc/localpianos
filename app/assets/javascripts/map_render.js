@@ -3,9 +3,10 @@ var coordinates
 $(document).ready(function() {
   coordinates = JSON.parse(document.getElementById('coordinates').value);
   myMap();
+  searchCoordinates(coordinates.latitude, coordinates.longitude)
 });
 
-
+var map
 
 function myMap() {
   var piano_locations
@@ -144,7 +145,7 @@ function myMap() {
     ]
   };
 
-  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
   var input = document.getElementById('search_string');
 
   var autocomplete = new google.maps.places.Autocomplete(input);

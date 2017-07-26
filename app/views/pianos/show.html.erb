@@ -1,0 +1,28 @@
+<h4>Piano near <%= @piano.address.capitalize %></h4>
+
+<% if current_user %>
+  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
+<br>
+
+<% if (photo = PianoPhoto.find_by(piano_id:@piano.id)) %>
+  <img src="<%= photo.image_url %>" width=400>
+<% end %>
+
+<h6><%= @piano.latitude %></h6>
+<h6><%= @piano.longitude %></h6>
+<h6><%= @piano.category %></h6>
+<h6><%= @piano.user_id %></h6>
+<h6><%= @piano.location_description %></h6>
+<h6><%= @piano.piano_description %></h6>
+<h6><%= @piano.access_description %></h6>
+<h6><%= @piano.updated_at %></h6>
+
+<h4>Other pianos nearby: (8miles)</h4>
+
+<% @nearbys.each do |nearby| %>
+  <%= link_to "Piano near #{nearby.address}", piano_path(nearby) %>
+  <br>
+<% end %>

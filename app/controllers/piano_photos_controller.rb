@@ -1,0 +1,2 @@
+class PianoPhotosController < ApplicationController
+end

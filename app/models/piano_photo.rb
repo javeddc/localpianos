@@ -1,0 +1,2 @@
+class PianoPhoto < ApplicationRecord
+end

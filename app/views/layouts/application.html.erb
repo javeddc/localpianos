@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectLemonbomb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <a href="/login">Log In</a>
+          <a href="signup">Sign Up</a>
+          <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="full-width">
+      <span onclick="openNav()" class="menu-bar"><i class="fa fa-bars"></i></span>
+        <div class="menu-title"> GUERILLA PIANIST</div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <%= yield %>
+  </body>
+</html>

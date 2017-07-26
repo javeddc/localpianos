@@ -1,0 +1,19 @@
+<h3>Signup to save your favorite pianos, or share piano locations with other pianists.</h3>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  Username (optional): <%= f.text_field :username, :value => @username %>
+  Email: <%= f.text_field :email, :value => @email %>
+  Password: <%= f.password_field :password %>
+  Retype password: <%= f.password_field :password_confirmation %>
+  <button type="submit" id="submit_btn">Sign Up!</button>
+
+<% end %>
+
+<script type="text/javascript">
+
+var submitBtn = document.getElementById('submit_btn');
+
+
+
+</script>

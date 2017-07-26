@@ -1,0 +1,19 @@
+<div class="output">
+
+</div>
+
+
+<script type="text/javascript">
+
+var settings = {
+  url: '/nearby'
+  // data: {api_key: 'XXXX'}
+}
+$.ajax(settings).done(function(result) {
+  test = result.data;
+  console.log(result);
+  console.log('yeah');
+  // $('.output').html('test') = 'test'
+  })
+
+</script>

@@ -1,0 +1,32 @@
+<h1>Local Pianos</h1>
+
+<% if current_user %>
+  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
+
+<% @pianos.each do |piano| %>
+
+<div class="piano_box">
+
+<%= link_to "Piano near #{piano.address}", piano_path(piano) %>
+
+  <h6><%= piano.latitude %></h6>
+  <h6><%= piano.longitude %></h6>
+  <h6><%= piano.category %></h6>
+  <h6><%= piano.user_id %></h6>
+  <h6><%= piano.location_description %></h6>
+  <h6><%= piano.piano_description %></h6>
+  <h6><%= piano.access_description %></h6>
+  <h6><%= piano.updated_at %></h6>
+
+  <% if (photo = PianoPhoto.find_by(piano_id:piano.id)) %>
+
+  <img src="<%= photo.image_url %>" width=400>
+
+  <% end %>
+
+</div>
+
+<% end %>

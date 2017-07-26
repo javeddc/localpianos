@@ -1,0 +1,32 @@
+<p>test view for searching by location</p>
+
+<input type="text" id="search_string" placeholder="search locations">
+<button type="button" id="search_btn">GO</button>
+
+<script type="text/javascript">
+
+
+  // var searchBtn = document.getElementById('search_btn')
+  // searchBtn.addEventListener('click', locationSearch)
+
+  $('#search_btn').click(locationSearch)
+
+
+  var locationSearch = function () {
+    console.log('clicked');
+    var settings = {
+      url: '/api_search_test',
+      data: {
+        searchString:   $('#search_string').val()
+      }
+    }
+    console.log('outside');
+    $.ajax(settings).done(function (result) {
+      console.log(result);
+      console.log('inside');
+    })
+
+  }
+
+
+</script>

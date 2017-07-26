@@ -21,9 +21,14 @@ Rails.application.routes.draw do
   get '/api_nearby' => 'locations#user_location'
   get '/api_current' => 'locations#current'
   get '/api_pianos_near' => 'locations#pianos_near'
+  ## test route for searching
+  get '/api_search_test' => 'locations#search_test'
 
-  # routes for testing locations API, with output:
+  # views for testing locations API, with output:
   get '/location' => 'pianos#map_me'
   get '/location/:id' => 'pianos#nearbys'
+  ## test view for search_test
+  get '/search_test' => 'pianos#search_test'
+
 
 end

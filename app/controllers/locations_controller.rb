@@ -17,8 +17,12 @@ class LocationsController < ApplicationController
     }
   end
 
-  def pianos_near
-    render json: Piano.near({latitude: -37.8196, longitude: 144.9631})
+
+
+
+  def search_test
+    # render json: {result: Piano.near([-37.8196, 144.9631], 8)}.to_json
+    render json: {result: params[:test]}.to_json
   end
 
 

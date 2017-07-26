@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :piano_photos
   end
 
+  get '/about' => 'pianos#about'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/login' => 'sessions#new'

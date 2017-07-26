@@ -20,9 +20,20 @@ class LocationsController < ApplicationController
 
 
 
-  def search_test
-    # render json: {result: Piano.near([-37.8196, 144.9631], 8)}.to_json
-    render json: {result: params[:test]}.to_json
+  def search_string
+    result_location = Geocoder.search(params[:searchString])[0]
+    render json: {
+      result: Piano.near(params[:searchString], 20),
+      center: {latitude: result_location.latitude, longitude: result_location.longitude}
+    }.to_json
+
+  end
+
+  def search_coordinates
+    render json: {
+      result: Piano.near([params[:latitude], params[:longitude]], 20)
+    }.to_json
+    # render html: params[:latitude] + 'sdf'
   end
 
 

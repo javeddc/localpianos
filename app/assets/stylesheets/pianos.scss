@@ -12,14 +12,24 @@
 /* styling for login signup pages */
 
 .page-info {
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
+  color: #666666;
+  font-family: 'Karla', sans-serif;
+}
+
+.page-intro {
+  font-size: 1em;
+  text-align: center;
+  color: #666666;
   font-family: 'Karla', sans-serif;
 }
 
 .textbox-label {
   font-size: 1.3em;
-  text-align: center;
+  color: #666666;
+  // text-align: center;
+  padding-left: .3em;
   font-family: 'Karla', sans-serif;
 }
 
@@ -33,11 +43,45 @@
   text-align: center;
   border: 3px solid #FF5300;
   width: 95%;
+}
 
+
+.input_field input.placeholder:focus {
+  color: #FF5300;
+  background-color: white;
 }
 
 .submit {
   text-align: center;
+}
+
+// .input {
+// 	position: relative;
+// 	z-index: 1;
+// 	display: inline-block;
+// 	margin: 1em;
+// 	max-width: 350px;
+// 	width: calc(100% - 2em);
+// 	vertical-align: top;
+// }
+
+.textbox-input input {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.2em;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #FF5300;
+	font-weight: 400;
+	font-family: 'Karla', sans-serif;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline-color: #FF5300;
 }
 
 

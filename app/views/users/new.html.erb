@@ -1,23 +1,19 @@
-<h3 class="page-info">Signup to save your favorite pianos, or share piano locations with other pianists.</h3>
+<h3 class="page-info">Signup</h3>
+<p class="page-intro">Find, add and play public pianos in your location today.</p>
 
-<%= form_for :user, url: '/users' do |f| %>
 
-  <p class="textbox-label">Username (optional):</p><p class="textbox-input"><%= f.text_field :username, :value => @username %></p>
-  <br>
-  <p class="textbox-label">Email:</p><p class="textbox-input"><%= f.text_field :email, :value => @email %></p>
-  <br>
-  <p class="textbox-label">Password:</p><p class="textbox-input"><%= f.password_field :password %></p>
-  <br>
-  <p class="textbox-label">Retype password:</p><p class="textbox-input"><%= f.password_field :password_confirmation %></p>
-  <br>
-  <p class="submit"><button type="submit" id="submit_btn">Sign Up!</button></p>
+<%= form_for :user, url: '/users', html: { class: 'input_field' } do |f| %>
+
+  <p class="textbox-input" placeholder="username"><%= f.text_field :username, class: 'placeholder', :value => @username %></p>
+  <p class="textbox-label">Username</p>
+  <p class="textbox-input"><%= f.text_field :email, class: 'placeholder', :value => @email %></p>
+  <p class="textbox-label">Email</p>
+  <p class="textbox-input"><%= f.password_field :password, class: 'placeholder' %></p>
+  <p class="textbox-label">Password</p>
+  <p class="textbox-input"><%= f.password_field :password_confirmation, class: 'placeholder' %></p>
+  <p class="textbox-label">Retype password</p>
+  <p class="submit"><button type="submit" class="submit_btn">Sign Up</button></p>
 
 <% end %>
 
-<script type="text/javascript">
-
-var submitBtn = document.getElementById('submit_btn');
-
-
-
-</script>
+<script type="text/javascript">var submitBtn = document.getElementById('submit_btn');</script>

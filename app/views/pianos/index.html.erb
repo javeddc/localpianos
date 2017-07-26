@@ -1,9 +1,11 @@
 <input type="hidden" id="coordinates" value="<%=
 @coordinates.to_json %>">
 
-<input type="text" id="search_string" placeholder="search locations">
+<div class="top-input">
+  <input class="input-text" type="text" id="search_string" placeholder="search locations">
+  <!-- <button class="input-button" type="button" id="search_btn">GO</button> -->
+</div>
 
-<button type="button" id="search_btn">GO</button>
 
 <div id="googleMap"></div>
 

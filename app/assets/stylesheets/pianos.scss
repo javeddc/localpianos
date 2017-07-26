@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Karla');
 
+* {
+  box-sizing: border-box;
+}
 
 #googleMap {
   width: 100%;
@@ -165,19 +168,31 @@
 .menu-bar {
   font-size: 36px;
   color: white;
-  width: 100%;
+  width: 2em;
+  // width: 100%;
+}
+
+.menu-rhs {
+  width: 2em;
 }
 
 .menu-title {
+  // flex: 1;
   font-family: 'Karla', sans-serif;
   font-size: 2em;
-  float: right;
+  width: 20rem;
+  overflow: hidden;
+  white-space: nowrap;
+  // float: right;
   color: white;
-  padding-right: 2em;
-  padding-top: 0.1em;
+  // padding-right: 2em;
+  // padding-top: 0.1em;
 }
 
-.full-width {
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   background-color: #FF5300;
   height: 3em;
@@ -187,6 +202,45 @@ i {
   font-size: 20em;
   padding-left: 0.3em;
   padding-top: 0.1em;
+}
+
+// The autocomplete suggestions drop-down
+.pac-container {
+
+}
+.pac-item, .pac-item-query {
+  font-family: 'Karla', sans-serif;
+  font-size: 0.8rem;
+}
+.pac-icon {
+  display: none;
+}
+
+// The search bar and button
+.top-input {
+  display: flex;
+}
+
+.input-text, .input-button {
+  height: 3rem;
+  border: none;
+  border-radius: 0;
+}
+
+
+.input-text {
+  padding-left: 1rem;
+  flex: 4;
+  font-size: 1.4rem;
+}
+
+.input-text:focus {
+  outline: none;
+}
+
+.input-button {
+  flex: 1;
+  font-size: 1rem;
 }
 
 /* The navigation links inside the overlay */

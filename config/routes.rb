@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+
+
   # routes for locations API:
   get '/api_nearby' => 'locations#user_location'
   get '/api_current' => 'locations#current'

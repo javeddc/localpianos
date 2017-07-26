@@ -12,8 +12,30 @@
   <p class="textbox-label">Password</p>
   <p class="textbox-input"><%= f.password_field :password_confirmation, class: 'placeholder' %></p>
   <p class="textbox-label">Retype password</p>
-  <p class="submit"><button type="submit" class="submit_btn">Sign Up</button></p>
+  <p class="submit"><button id="submit_btn">Sign Up</button></p>
 
 <% end %>
 
-<script type="text/javascript">var submitBtn = document.getElementById('submit_btn');</script>
+<script>
+
+var submitBtn = document.getElementById('submit_btn');
+submitBtn.addEventListener('click', function(event) {
+  var email = document.getElementById('user_email').value;
+  var password = document.getElementById('user_password').value;
+  var passwordVer = document.getElementById('user_password_confirmation').value
+  var emailCheck = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  if (email == "") {
+    event.preventDefault();
+    alert("Valid Email Address Required!")
+  } else if (email.search(emailCheck) == -1) {
+    event.preventDefault();
+    alert("Valid Email Address Required!")
+  } else if (password.length < 6) {
+    event.preventDefault();
+    alert("Password Must Be At Least 6 Characters!")
+  } else if (password !== passwordVer) {
+    event.preventDefault();
+    alert("Password Fields Must Match!")
+  };
+});
+</script>

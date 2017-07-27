@@ -64,7 +64,7 @@
 }
 
 /* Button Login Signup */
-.submit_btn {
+#submit_btn {
 	border-radius: 50px;
 	border: 3px solid #fff;
 	color: #fff;
@@ -75,16 +75,16 @@
     font-family: 'Karla', sans-serif;
 }
 
-.submit_btn:active {
+#submit_btn:active {
 	border-color: #EAEAEA;
 	color: #fff;
 }
 
-.submit_btn:hover {
+#submit_btn:hover {
 	background: #FF5300;
 }
 
-.submit_btn:before {
+#submit_btn:before {
 	position: absolute;
 	height: 100%;
 	font-size: 125%;
@@ -95,17 +95,17 @@
 	transition: all 0.3s;
 }
 
-.submit_btn:active:before {
+#submit_btn:active:before {
 	color: #17954c;
 }
 
-.submit_btn:before {
+#submit_btn:before {
 	left: 70%;
 	opacity: 0;
 	top: 0;
 }
 
-.submit_btn:hover:before {
+#submit_btn:hover:before {
 	left: 80%;
 	opacity: 1;
 }

@@ -13,6 +13,7 @@ function myMap() {
   var mapProp = {
     center: new google.maps.LatLng(coordinates.latitude, coordinates.longitude),
     zoom: 13,
+    disableDefaultUI: true,
     styles: [{
         "featureType": "water",
         "elementType": "geometry",

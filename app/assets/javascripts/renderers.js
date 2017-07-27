@@ -1,9 +1,21 @@
-var source   = $("#tile-template").html();
-var template = Handlebars.compile(source);
-var tile = $("#tile");
+var source
+var template
+var tile
 
-console.log(tile);
+
+$(document).ready(function() {
+  source = $("#tile-template").html();
+  template = Handlebars.compile(source);
+  tile = $("#tile")[0];
+})
+
+
 
 function popTile(obj) {
-  console.log(obj);
+  if (tileClosed) {
+    openTile();
+    tileClosed = false
+  }
+
+  tile.innerHTML = (template(obj))
 }

@@ -20,7 +20,7 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>
 
-<script type="template">
+<script type="template" id="tile-template">
 <div class="tile-contents">
   <div class="tile-header">
     <div class="piano-image" style="background-image: url( {{ image_url }} )"></div>
@@ -32,9 +32,11 @@
       Category:
       {{ category }}
     </div>
-    <div class="tile-star">
-      <i onclick="starPiano({{ id }})"></i>
+    <div class="tile-close">
+      <span onclick="closeTile()">X</span>
+
     </div>
+
   </div>
   <div class="tile-body">
     <div class="piano-location-description">

@@ -1,0 +1,38 @@
+<h3 class="page-info">Add New Piano</h3>
+<p class="page-intro">Add an unlisted piano to our listings.</p>
+
+<form class="input_field" action="/pianos" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <p class="textbox-label">Address</p>
+  <p class="textbox-input"><input id="addressSearch" type="text" name="address" required></p>
+
+  <p class="textbox-label">Access Description</p>
+  <p class="textbox-input"><textarea name="accessDescription" required></textarea></p>
+
+  <p class="textbox-label">Location Description</p>
+  <p class="textbox-input"><textarea name="alocationDescription" required></textarea></p>
+
+  <p class="textbox-label">Piano Description</p>
+  <p class="textbox-input"><textarea name="pianoDescription" required></textarea></p>
+
+  <p class="textbox-input">
+    <select class="type-input" name="category">
+      <!-- These options should be hard-coded -->
+      <option value="pubic">Public</option>
+      <option value="private">Private</option>
+    </select>
+  </p>
+
+  <button class="submit_btn">Submit</button>
+
+</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>
+
+<script>
+  new google.maps.places.Autocomplete((document.getElementById('addressSearch')), {
+    types: ['address'],
+    componentRestrictions: { country: "aus" }
+  });
+</script>

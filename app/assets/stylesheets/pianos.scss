@@ -62,6 +62,18 @@
   padding-top: 2em;
 }
 
+#invalidEmail {
+  visibility: hidden;
+}
+
+#shortPassword {
+  visibility: hidden;
+}
+
+#noMatch {
+  visibility: hidden;
+}
+
 /* Button Login Signup */
 .submit_btn {
 	border-radius: 50px;

@@ -75,11 +75,11 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+  production:
+    url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: Project-LemonBomb_production
-  username: Project-LemonBomb
-  password: <%= ENV['PROJECT-LEMONBOMB_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: Project-LemonBomb_production
+#   username: Project-LemonBomb
+#   password: <%= ENV['PROJECT-LEMONBOMB_DATABASE_PASSWORD'] %>

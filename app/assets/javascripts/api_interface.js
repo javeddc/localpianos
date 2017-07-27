@@ -36,7 +36,7 @@ function searchCoordinates(input_latitude, input_longitude) {
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
       };
       marker.addListener("click", function() {
-        console.log(piano);
+        popTile(piano);
       })
     });
   });

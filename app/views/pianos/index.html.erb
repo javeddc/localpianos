@@ -1,12 +1,30 @@
 <input type="hidden" id="coordinates" value="<%=
 @coordinates.to_json %>">
 
-<div class="top-input">
-  <input class="input-text" type="text" id="search_string" placeholder="search locations">
-  <!-- <button class="input-button" type="button" id="search_btn">GO</button> -->
+<div class="index-container">
+  <div class="top-input">
+    <input class="input-text" type="text" id="search_string" placeholder="search locations">
+    <!-- <button class="input-button" type="button" id="search_btn">GO</button> -->
+  </div>
+
+  <div id="googleMap" style="position: relative; overflow: hidden;"></div>
+
+  <div id="tile"></div>
+
 </div>
+<!-- <div id="pianoSlider" class="tile-overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeTile()">&times;</a>
+  <div class="tile-overlay-content">
+    Your piano details
+  </div>
+</div> -->
 
+<!-- <div class="slider-panel">
+  <span onclick="openTile()" class="piano-info">
+    <i class="fa fa-bars"></i>
+  </span>
+</div> -->
 
-<div id="googleMap"></div>
+<!-- <div class="pianoTile" style="position: relative; overflow: hidden;"></div> -->
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>

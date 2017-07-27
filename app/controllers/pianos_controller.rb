@@ -36,6 +36,9 @@ class PianosController < ApplicationController
     piano.location_description = params[:locationDescription]
     piano.piano_description = params[:pianoDescription]
     piano.category = params[:category]
+    if piano.address == nil
+      redirect_to '/pianos/new'
+    end
     piano.save
     redirect_to '/pianos'
   end

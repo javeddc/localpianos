@@ -6,13 +6,27 @@
 
   <p class="textbox-label">Username</p>
   <p class="textbox-input" placeholder="username"><%= f.text_field :username, class: 'placeholder', :value => @username %></p>
+
   <p class="textbox-label">Email</p>
-  <p class="textbox-input"><%= f.text_field :email, class: 'placeholder', :value => @email %></p>
+  <p class="textbox-input">
+    <%= f.text_field :email, class: 'placeholder', :value => @email %>
+    <div id="invalidEmail">Valid Email Address Required!</div>
+  </p>
+
   <p class="textbox-label">Password</p>
-  <p class="textbox-input"><%= f.password_field :password, class: 'placeholder' %></p>
+  <p class="textbox-input">
+    <%= f.password_field :password, class: 'placeholder' %>
+    <div id="shortPassword">Password Must Be At Least 6 Characters!</div>
+  </p>
+
   <p class="textbox-label">Retype password</p>
 
-  <p class="textbox-input"><%= f.password_field :password_confirmation, class: 'placeholder' %></p>
+  <p class="textbox-input">
+    <%= f.password_field :password_confirmation, class: 'placeholder' %>
+    <div id="noMatch">Password Fields Must Match!</div>
+  </p>
+
+
   <p class="spacer"> </p>
 <!--   <p class="submit"><button type="submit" class="submit_btn">Sign Up</button></p> -->
   <p class="btn"><button id="submit_btn">Sign Up</button></p>
@@ -20,7 +34,69 @@
 
 <% end %>
 
+
 <script>
+
+var userEmail = document.getElementById('user_email')
+var userPassword = document.getElementById('user_password')
+var userPasswordConfirmation = document.getElementById('user_password_confirmation')
+var submitBtn = document.getElementById('submit_btn');
+
+var validateEmail = function(inputText) {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if(inputText.match(mailformat)) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
+userEmail.addEventListener('blur', function() {
+  var email = document.getElementById('user_email').value;
+  if (email == "") {
+    document.getElementById('invalidEmail').style.visibility = "visible"
+  } else if (validateEmail(email) == false) {
+    document.getElementById('invalidEmail').style.visibility = "visible"
+  } else {
+    document.getElementById('invalidEmail').style.visibility = "hidden"
+  }
+});
+
+userPassword.addEventListener('blur', function() {
+  var password = document.getElementById('user_password').value;
+  if (password.length < 6) {
+    document.getElementById('shortPassword').style.visibility = "visible"
+  } else {
+    document.getElementById('shortPassword').style.visibility = "hidden"
+  };
+});
+
+userPasswordConfirmation.addEventListener('blur', function() {
+  var password = document.getElementById('user_password').value;
+  var passwordVer = document.getElementById('user_password_confirmation').value;
+  if (password !== passwordVer) {
+    document.getElementById('noMatch').style.visibility = "visible"
+  } else {
+    document.getElementById('noMatch').style.visibility = "hidden"
+  };
+});
+
+submitBtn.addEventListener('click', function(event) {
+
+  var email = document.getElementById('user_email').value;
+  var password = document.getElementById('user_password').value;
+  var passwordVer = document.getElementById('user_password_confirmation').value;
+
+  if (email == "") {
+    event.preventDefault();
+  } else if (email.search(emailCheck) == -1) {
+    event.preventDefault();
+  } else if (password.length < 6) {
+    event.preventDefault();
+  } else if (password !== passwordVer) {
+    event.preventDefault();
+
+<!-- <script type="text/javascript">
 
 var submitBtn = document.getElementById('submit_btn');
 submitBtn.addEventListener('click', function(event) {
@@ -40,6 +116,8 @@ submitBtn.addEventListener('click', function(event) {
   } else if (password !== passwordVer) {
     event.preventDefault();
     alert("Password Fields Must Match!")
+
   };
 });
 </script>
+ -->

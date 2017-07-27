@@ -25,6 +25,7 @@ class LocationsController < ApplicationController
     render json: {
       result: Piano.near(params[:searchString], 20),
       center: {latitude: result_location.latitude, longitude: result_location.longitude}
+      # star_ids: {Star.where(user_id: current_user)}
     }.to_json
 
   end

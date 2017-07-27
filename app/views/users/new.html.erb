@@ -4,15 +4,19 @@
 
 <%= form_for :user, url: '/users', html: { class: 'input_field' } do |f| %>
 
-  <p class="textbox-input" placeholder="username"><%= f.text_field :username, class: 'placeholder', :value => @username %></p>
   <p class="textbox-label">Username</p>
-  <p class="textbox-input"><%= f.text_field :email, class: 'placeholder', :value => @email %></p>
+  <p class="textbox-input" placeholder="username"><%= f.text_field :username, class: 'placeholder', :value => @username %></p>
   <p class="textbox-label">Email</p>
-  <p class="textbox-input"><%= f.password_field :password, class: 'placeholder' %></p>
+  <p class="textbox-input"><%= f.text_field :email, class: 'placeholder', :value => @email %></p>
   <p class="textbox-label">Password</p>
-  <p class="textbox-input"><%= f.password_field :password_confirmation, class: 'placeholder' %></p>
+  <p class="textbox-input"><%= f.password_field :password, class: 'placeholder' %></p>
   <p class="textbox-label">Retype password</p>
+
+  <p class="textbox-input"><%= f.password_field :password_confirmation, class: 'placeholder' %></p>
+  <p class="spacer"> </p>
+<!--   <p class="submit"><button type="submit" class="submit_btn">Sign Up</button></p> -->
   <p class="submit"><button id="submit_btn">Sign Up</button></p>
+
 
 <% end %>
 

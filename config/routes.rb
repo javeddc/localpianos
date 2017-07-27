@@ -11,19 +11,27 @@ Rails.application.routes.draw do
     resources :piano_photos
   end
 
+  get '/about' => 'pianos#about'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+
+
   # routes for locations API:
   get '/api_nearby' => 'locations#user_location'
   get '/api_current' => 'locations#current'
-  get '/api_pianos_near' => 'locations#pianos_near'
+  get '/api_search_coordinates' => 'locations#search_coordinates'
+  ## test route for searching
+  get '/api_search_test' => 'locations#search_test'
 
-  # routes for testing locations API, with output:
+  # views for testing locations API, with output:
   get '/location' => 'pianos#map_me'
   get '/location/:id' => 'pianos#nearbys'
+  ## test view for search_test
+  get '/search_test' => 'pianos#search_test'
+
 
 end

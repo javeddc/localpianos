@@ -2,10 +2,13 @@
 
 <%= form_tag '/login' do %>
 
-  <p class="textbox-input"><%= text_field_tag :email %></p>
+  <p class="page-intro">Swanston presets, avalon is so not melb burlesque the city loop the G' don't paint over the banksy's, spencer st station.</p>
+
   <p class="textbox-label">Email</p>
-  <p class="textbox-input"><%= password_field_tag :password %></p>
+  <p class="textbox-input"><%= text_field_tag :email %></p>
   <p class="textbox-label">Password</p>
-  <p class="submit"><%= submit_tag "Submit" %></p>
+  <p class="textbox-input"><%= password_field_tag :password %></p>
+  <p class="spacer"> </p>
+  <p class="btn"><%= submit_tag "Submit",class: 'submit_btn'  %></p>
 
 <% end %>

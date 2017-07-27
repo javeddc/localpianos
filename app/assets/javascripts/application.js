@@ -12,4 +12,10 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+
+//= require 'jquery.js'
+
+
+//= require 'map_render.js'
+//= require 'api_interface.js'
+//= require 'styling.js'

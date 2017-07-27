@@ -9,19 +9,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+
+
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
           <a href="/">Home</a>
-          <a href="#">About</a>
+          <a href="/about">About</a>
           <a href="/login">Log In</a>
-          <a href="signup">Sign Up</a>
-          <a href="#">Contact</a>
+          <a href="/signup">Sign Up</a>
         </div>
     </div>
-    <div class="full-width">
+
+    <div class="top-bar">
       <span onclick="openNav()" class="menu-bar"><i class="fa fa-bars"></i></span>
         <div class="menu-title"> GUERILLA PIANIST</div>
+        <span class="menu-rhs"></span>
+
+        </div>
     </div>
 
     <%= yield %>

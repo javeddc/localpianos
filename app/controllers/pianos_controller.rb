@@ -23,4 +23,7 @@ class PianosController < ApplicationController
   def map_me
   end
 
+  def search_test
+  end
+
 end

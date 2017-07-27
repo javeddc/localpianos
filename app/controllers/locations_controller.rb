@@ -17,8 +17,23 @@ class LocationsController < ApplicationController
     }
   end
 
-  def pianos_near
-    render json: Piano.near({latitude: -37.8196, longitude: 144.9631})
+
+
+
+  def search_string
+    result_location = Geocoder.search(params[:searchString])[0]
+    render json: {
+      result: Piano.near(params[:searchString], 20),
+      center: {latitude: result_location.latitude, longitude: result_location.longitude}
+    }.to_json
+
+  end
+
+  def search_coordinates
+    render json: {
+      result: Piano.near([params[:latitude], params[:longitude]], 20)
+    }.to_json
+    # render html: params[:latitude] + 'sdf'
   end
 
 

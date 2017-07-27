@@ -22,6 +22,7 @@ function searchCoordinates(input_latitude, input_longitude) {
   $.ajax(settings).done(function (result) {
 
     piano_locations = result.result;
+    console.log(piano_locations);
     piano_locations.forEach(function (piano) {
       var marker = new google.maps.Marker({
         position: {

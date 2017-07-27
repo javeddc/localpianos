@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 
 //= require 'jquery.js'
-
+//= require 'handlebars.js'
 
 //= require 'map_render.js'
 //= require 'api_interface.js'

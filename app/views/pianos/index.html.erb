@@ -6,7 +6,34 @@
   <!-- <button class="input-button" type="button" id="search_btn">GO</button> -->
 </div>
 
-
 <div id="googleMap"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>
+
+<script type="template">
+<div class="tile-contents">
+  <div class="tile-header">
+    <div class="piano-image" style="background-image: url( {{ image_url }} )"></div>
+    <div class="piano-address">
+      Piano at
+      {{ address }}
+    </div>
+    <div class="piano-category">
+      Category:
+      {{ category }}
+    </div>
+    <div class="tile-star">
+      <i onclick="starPiano({{ id }})"></i>
+    </div>
+  </div>
+  <div class="tile-body">
+    <div class="piano-location-description">
+      {{ location_description }}</div>
+    <div class="piano-piano-description">
+      {{ piano_description }}</div>
+    <div class="piano-access-description">
+      {{ access_description }}</div>
+  </div>
+  <div class="tile-footer"></div>
+</div>
+</script>

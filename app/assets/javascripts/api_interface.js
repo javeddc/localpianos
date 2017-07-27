@@ -12,13 +12,13 @@ function locationSearch() {
 $('#search_btn').click(locationSearch)
 
 function searchCoordinates(input_latitude, input_longitude) {
-var settings = {
-  url: '/api_search_coordinates',
-  data: {
-    latitude: input_latitude,
-    longitude: input_longitude
+  var settings = {
+    url: '/api_search_coordinates',
+    data: {
+      latitude: input_latitude,
+      longitude: input_longitude
+    }
   }
-}
   $.ajax(settings).done(function (result) {
 
     piano_locations = result.result;

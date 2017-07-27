@@ -12,17 +12,16 @@ function locationSearch() {
 $('#search_btn').click(locationSearch)
 
 function searchCoordinates(input_latitude, input_longitude) {
-var settings = {
-  url: '/api_search_coordinates',
-  data: {
-    latitude: input_latitude,
-    longitude: input_longitude
+  var settings = {
+    url: '/api_search_coordinates',
+    data: {
+      latitude: input_latitude,
+      longitude: input_longitude
+    }
   }
-}
   $.ajax(settings).done(function (result) {
 
     piano_locations = result.result;
-    console.log(piano_locations);
     piano_locations.forEach(function (piano) {
       var marker = new google.maps.Marker({
         position: {
@@ -31,6 +30,14 @@ var settings = {
         },
         map: map
       });
+      if (piano.category === "private") {
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+      } else {
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+      };
+      marker.addListener("click", function() {
+        console.log(piano);
+      })
     });
   });
 }

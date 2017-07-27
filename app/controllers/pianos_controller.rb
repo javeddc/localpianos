@@ -26,4 +26,18 @@ class PianosController < ApplicationController
   def search_test
   end
 
+  def new
+  end
+
+  def create
+    piano = Piano.new
+    piano.address = params[:address]
+    piano.access_description = params[:accessDescription]
+    piano.location_description = params[:locationDescription]
+    piano.piano_description = params[:pianoDescription]
+    piano.category = params[:category]
+    piano.save
+    redirect_to '/pianos'
+  end
+
 end

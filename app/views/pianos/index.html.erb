@@ -14,39 +14,40 @@
   </div>
 </div>
 
-
-
-
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>
 
 <script type="template" id="tile-template">
-<div class="tile-contents">
-  <div class="tile-header">
-    <div class="piano-image" style="background-image: url( {{ image_url }} )"></div>
-    <div class="piano-address">
-      Piano at
-      {{ address }}
-    </div>
-    <div class="piano-category">
-      Category:
-      {{ category }}
-    </div>
-    <div class="tile-close">
-      <span onclick="closeTile()">X</span>
+  <div class="tile-contents">
+    <div class="tile-header">
+      <div class="piano-image" style="background-image: url( {{ image_url }} )"></div>
+      <div class="piano-address">
+
+        {{ address }}
+      </div>
+      <div class="tile-close">
+        <span onclick="closeTile()">
+          <i class="fa fa-close"></i>
+        </span>
+      </div>
 
     </div>
-
+    <div class="tile-body">
+      <div class="piano-category">
+        Category:
+        {{ category }}
+      </div>
+      <div class="piano-location-description">
+        {{ location_description }}</div>
+      <div class="piano-piano-description">
+        {{ piano_description }}</div>
+      <div class="piano-access-description">
+        {{ access_description }}</div>
+    </div>
+    <div class="tile-footer">
+    <div class="tile-btn" onclick="toggleStar({{ id }})">
+        <span id="star-text">Add to Favourites</span>
+        <i class="fa fa-star" id="star-icon"></i>
+    </div>
+    </div>
   </div>
-  <div class="tile-body">
-    <div class="piano-location-description">
-      {{ location_description }}</div>
-    <div class="piano-piano-description">
-      {{ piano_description }}</div>
-    <div class="piano-access-description">
-      {{ access_description }}</div>
-  </div>
-  <div class="tile-footer"></div>
-  <span onclick="addStar({{ id }})">S</span>
-</div>
 </script>

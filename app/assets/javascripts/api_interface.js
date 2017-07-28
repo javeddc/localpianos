@@ -5,25 +5,26 @@ function locationSearch() {
       searchString: $('#search_string').val()
     }
   }
-  $.ajax(settings).done(function (result) {
+  $.ajax(settings).done(function(result) {
     console.log(result);
   })
 }
 $('#search_btn').click(locationSearch)
 
-function searchCoordinates(input_latitude, input_longitude) {
+function searchCoordinates(inputLatitude, inputLongitude) {
   var settings = {
     url: '/api_search_coordinates',
     data: {
-      latitude: input_latitude,
-      longitude: input_longitude
+      latitude: inputLatitude,
+      longitude: inputLongitude
     }
   }
-  $.ajax(settings).done(function (result) {
-
+  $.ajax(settings).done(function(result) {
+    console.log(result);
     piano_locations = result.result;
+    star_ids = result.star_ids;
     console.log(piano_locations);
-    piano_locations.forEach(function (piano) {
+    _.each(piano_locations, function(piano) {
       var marker = new google.maps.Marker({
         position: {
           lat: piano.latitude,
@@ -36,9 +37,31 @@ function searchCoordinates(input_latitude, input_longitude) {
       } else {
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
       };
+      if (_.contains(star_ids, piano.id)) {
+        marker.setIcon('http://maps.google.com/mapfiles/kml/paddle/orange-stars.png')
+        console.log('inside');
+      }
       marker.addListener("click", function() {
+        //loop that turns off all markers
+        // turn marker.visible(?) back on
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+        console.log(marker.icon);
         popTile(piano);
       })
-    });
+    })
   });
+}
+
+function toggleStar(pianoId) {
+  toggleTileStar();
+  console.log(pianoId);
+  var settings = {
+    url: '/api_star_toggle',
+    data: {
+      piano_id: pianoId
+    }
+  }
+  $.ajax(settings).done(function(result) {
+    console.log(result);
+  })
 }

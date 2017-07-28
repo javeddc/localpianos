@@ -11,6 +11,12 @@ function locationSearch() {
 }
 $('#search_btn').click(locationSearch)
 
+var markers = [];
+
+var setMapOnAll = function(map) {
+  for (var i = 0; i < markers.length; i++) { markers[i].setMap(map); }
+};
+
 function searchCoordinates(inputLatitude, inputLongitude) {
   var settings = {
     url: '/api_search_coordinates',
@@ -32,6 +38,7 @@ function searchCoordinates(inputLatitude, inputLongitude) {
         },
         map: map
       });
+      markers.push(marker);
       if (piano.category === "private") {
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
       } else {
@@ -40,12 +47,11 @@ function searchCoordinates(inputLatitude, inputLongitude) {
       if (_.contains(star_ids, piano.id)) {
         marker.setIcon('http://maps.google.com/mapfiles/kml/paddle/orange-stars.png')
         console.log('inside');
-      }
+      };
+      setMapOnAll(map);
       marker.addListener("click", function() {
-        //loop that turns off all markers
-        // turn marker.visible(?) back on
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
-        console.log(marker.icon);
+        setMapOnAll(null);
+        marker.setMap(map);
         popTile(piano);
       })
     })

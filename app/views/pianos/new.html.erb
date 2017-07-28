@@ -5,18 +5,18 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <p class="textbox-label">Address</p>
-  <p class="textbox-input"><input id="addressSearch" type="text" placeholder="Add the address" name="address" required></p>
+  <p class="textbox-input-address"><input id="addressSearch" type="search" placeholder="What is the address of the Piano" name="address" required></p>
 
   <p class="textbox-label">Access Description</p>
-  <p class="textbox-input"><textarea name="accessDescription" required></textarea></p>
+  <p class=""><textarea class="textbox-input-description" placeholder="How to access the Piano..." name="accessDescription" required></textarea></p>
 
   <p class="textbox-label">Location Description</p>
-  <p class="textbox-input"><textarea name="alocationDescription" required></textarea></p>
+  <p class=""><textarea class="textbox-input-description" placeholder="What is the location like..." name="alocationDescription" required></textarea></p>
 
   <p class="textbox-label">Piano Description</p>
-  <p class="textbox-input"><textarea name="pianoDescription" required></textarea></p>
+  <p class=""><textarea class="textbox-input-description" placeholder="Tell us about the Piano..." name="pianoDescription" required></textarea></p>
 
-  <p class="textbox-input">
+  <p class="textbox-label">Category:
     <select class="type-input" name="category">
       <!-- These options should be hard-coded -->
       <option value="pubic">Public</option>
@@ -24,7 +24,8 @@
     </select>
   </p>
 
-  <button class="submit_btn">Submit</button>
+  <p class="btn"><button id="submit_btn">Submit</button></p>
+  <p class="spacer"> </p>
 
 </form>
 

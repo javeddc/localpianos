@@ -33,16 +33,18 @@ function searchCoordinates(inputLatitude, inputLongitude) {
         map: map
       });
       if (piano.category === "private") {
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+        marker.setIcon('<%= asset_url "RedMarker.png" %>')
       } else {
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+        marker.setIcon('<%= asset_url "RedMarker.png" %>')
       };
       if (_.contains(star_ids, piano.id)) {
         marker.setIcon('http://maps.google.com/mapfiles/kml/paddle/orange-stars.png')
         console.log('inside');
       }
       marker.addListener("click", function() {
+
         //loop that turns off all markers
+
         // turn marker.visible(?) back on
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
         console.log(marker.icon);

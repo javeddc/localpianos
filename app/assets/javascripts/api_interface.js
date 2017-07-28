@@ -42,7 +42,9 @@ function searchCoordinates(inputLatitude, inputLongitude) {
         console.log('inside');
       }
       marker.addListener("click", function() {
+       
         //loop that turns off all markers
+
         // turn marker.visible(?) back on
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
         console.log(marker.icon);

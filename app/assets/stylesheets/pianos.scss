@@ -25,6 +25,23 @@
   text-align: center;
   color: #666666;
   font-family: 'Karla', sans-serif;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.about-info {
+  font-size: 1em;
+  text-align: center;
+  color: #666666;
+  font-family: 'Karla', sans-serif;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.piano-icon {
+  font-size: 4em;
+  text-align: center;
+  color: #ff5300;
 }
 
 .textbox-label {
@@ -273,7 +290,7 @@ i.fa.fa-star-o, i.fa.fa-star {
   padding: 8px;
   text-decoration: none;
   font-family: 'Karla', sans-serif;
-  font-size: 4em;
+  font-size: 3.5em;
   color: #fff;
   display: block;
   /* Display block instead of inline */

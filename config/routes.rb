@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   post '/pianos' => 'pianos#create'
+  get '/new' => 'pianos#new'
   get '/about' => 'pianos#about'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'

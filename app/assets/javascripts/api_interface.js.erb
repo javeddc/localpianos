@@ -42,14 +42,15 @@ function searchCoordinates(inputLatitude, inputLongitude) {
       markers.push(marker);
       if (piano.category === "private") {
         marker.setIcon('<%= asset_url "BlueMarker.png" %>')
-      } else {
-        marker.setIcon('<%= asset_url "RedMarker.png" %>')
-      };
-      if (_.contains(star_ids, piano.id)) {
+      }
+      else if (_.contains(star_ids, piano.id)) {
         marker.setIcon('<%= asset_url "StarMarker.png" %>')
         console.log('inside');
+      }
+      else {
+        marker.setIcon('<%= asset_url "RedMarker.png" %>')
+      };
 
-    };
       setMapOnAll(map);
       marker.addListener("click", function() {
       setMapOnAll(null);

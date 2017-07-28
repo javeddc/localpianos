@@ -23,6 +23,7 @@ function openTile() {
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeTile() {
+    setMapOnAll(map);
     document.getElementById("tile").style.flex = 0;
     tileClosed = true;
     document.getElementById('tile').style.height = 0;

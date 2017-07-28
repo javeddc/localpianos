@@ -1,4 +1,4 @@
-class Location
+class Location < ApplicationRecord
 
   geocoded_by :address, :ip_address
   reverse_geocoded_by :latitude, :longitude

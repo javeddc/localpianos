@@ -14,26 +14,20 @@
     <div id="myNav" class="overlay">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlay-content">
-<<<<<<< HEAD
+
         <a href="/"><i class="fa fa-home"></i> Home</a>
         <a href="/about"><i class="fa fa-file-text"></i> About</a>
         <a href="/new"><i class="fa fa-music"></i> Add Piano</a>
-        <a href="/login"><i class="fa fa-user"></i> Log In</a>
-        <a href="/signup"><i class="fa fa-user-plus"></i> Sign Up</a>
-=======
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/new">Add Piano</a>
 
         <% if logged_in? %>
-        <a href="/logout">Log Out</a>
+        <a href="/logout"><i class="fa fa-user"></i> Log Out</a>
         <% else %>
-        <a href="/login">Log In</a>
-        <a href="/signup">Sign Up</a>
+        <a href="/login"><i class="fa fa-user"></i> Log In</a>
+        <a href="/signup"><i class="fa fa-user-plus"></i> Sign Up</a>
         <% end %>
 
 
->>>>>>> d4f09a9812aa67726447f149841fd88066b5ce73
+
       </div>
     </div>
 

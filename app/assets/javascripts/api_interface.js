@@ -5,26 +5,26 @@ function locationSearch() {
       searchString: $('#search_string').val()
     }
   }
-  $.ajax(settings).done(function (result) {
+  $.ajax(settings).done(function(result) {
     console.log(result);
   })
 }
 $('#search_btn').click(locationSearch)
 
-function searchCoordinates(input_latitude, input_longitude) {
+function searchCoordinates(inputLatitude, inputLongitude) {
   var settings = {
     url: '/api_search_coordinates',
     data: {
-      latitude: input_latitude,
-      longitude: input_longitude
+      latitude: inputLatitude,
+      longitude: inputLongitude
     }
   }
-  $.ajax(settings).done(function (result) {
+  $.ajax(settings).done(function(result) {
     console.log(result);
     piano_locations = result.result;
     star_ids = result.star_ids;
     console.log(piano_locations);
-    piano_locations.forEach(function (piano) {
+    piano_locations.forEach(function(piano) {
       var marker = new google.maps.Marker({
         position: {
           lat: piano.latitude,
@@ -46,4 +46,18 @@ function searchCoordinates(input_latitude, input_longitude) {
       })
     });
   });
+}
+
+function toggleStar(pianoId) {
+  toggleTileStar();
+  console.log(pianoId);
+  var settings = {
+    url: '/api_star_toggle',
+    data: {
+      piano_id: pianoId
+    }
+  }
+  $.ajax(settings).done(function(result) {
+    console.log(result);
+  })
 }

@@ -43,7 +43,11 @@
       <div class="piano-access-description">
         {{ access_description }}</div>
     </div>
-    <div class="tile-footer"></div>
-    <span onclick="addStar({{ id }})"></span>
+    <div class="tile-footer">
+    <div class="tile-btn" onclick="toggleStar({{ id }})">
+        <span id="star-text">Add to Favourites</span>
+        <i class="fa fa-star" id="star-icon"></i>
+    </div>
+    </div>
   </div>
 </script>

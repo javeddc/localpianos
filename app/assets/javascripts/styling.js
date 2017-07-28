@@ -25,5 +25,5 @@ function openTile() {
 function closeTile() {
     document.getElementById("tile").style.flex = 0;
     tileClosed = true;
-    tile.innerHTML = '';
+    document.getElementById('tile').style.height = 0;
 }

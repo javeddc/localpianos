@@ -24,7 +24,7 @@ function searchCoordinates(inputLatitude, inputLongitude) {
     piano_locations = result.result;
     star_ids = result.star_ids;
     console.log(piano_locations);
-    piano_locations.forEach(function(piano) {
+    _.each(piano_locations, function(piano) {
       var marker = new google.maps.Marker({
         position: {
           lat: piano.latitude,
@@ -42,9 +42,11 @@ function searchCoordinates(inputLatitude, inputLongitude) {
         console.log('inside');
       }
       marker.addListener("click", function() {
+        // marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+        console.log(marker.icon);
         popTile(piano);
       })
-    });
+    })
   });
 }
 

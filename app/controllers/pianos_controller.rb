@@ -7,7 +7,7 @@ class PianosController < ApplicationController
 
     @coordinates = { latitude: user_location.latitude, longitude: user_location.longitude }
 
-    if user_location.country_code == 'RD' || ''
+    if user_location.country_code == "RD" || user_location.country_code == ""
       @coordinates = { latitude: -37.8196, longitude: 144.9631 }
     end
 

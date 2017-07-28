@@ -13,6 +13,7 @@
 //= require rails-ujs
 
 //= require 'jquery.js'
+//= require 'underscore.js'
 
 
 

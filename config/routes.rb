@@ -26,11 +26,8 @@ Rails.application.routes.draw do
   get '/api_nearby' => 'locations#user_location'
   get '/api_current' => 'locations#current'
   get '/api_search_coordinates' => 'locations#search_coordinates'
-  get '/api_star_toggle' => 'stars#toggle
-
-
-
-  '
+  get '/api_star_toggle' => 'stars#toggle'
+  
   ## test route for searching
   get '/api_search_test' => 'locations#search_test'
 

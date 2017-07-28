@@ -19,3 +19,8 @@ function popTile(obj) {
 
   tile.innerHTML = (template(obj))
 }
+
+function toggleTileStar() {
+  $('#star-icon')[0].classList.toggle('fa-star')
+  $('#star-icon')[0].classList.toggle('fa-star-o')
+}

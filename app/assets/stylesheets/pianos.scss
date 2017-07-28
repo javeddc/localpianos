@@ -1,7 +1,7 @@
 // Place all the styles related to the pianos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url( 'https://fonts.googleapis.com/css?family=Karla');
 
 * {
   box-sizing: border-box;
@@ -13,14 +13,11 @@
   height: 100%;
   flex: 1;
 }
-
 /* styling for login signup pages */
-
 .page-info {
   font-size: 2.5em;
   text-align: center;
   color: #666666;
-
 }
 
 .page-intro {
@@ -34,7 +31,7 @@
   font-size: 1.3em;
   color: #666666;
   // text-align: center;
-  padding-left: .3em;
+  padding-left: 0.3em;
   font-family: 'Karla', sans-serif;
 }
 
@@ -101,18 +98,17 @@
 #noMatch {
   visibility: hidden;
 }
-
 /* Button Login Signup */
-
 .btn {
   text-align: center;
 }
+
 #submit_btn {
-	border-radius: 50px;
+  border-radius: 50px;
   background-color: #ff5300;
-	border: 3px solid #E7E7E7;
-	color: #fff;
-	overflow: hidden;
+  border: 3px solid #E7E7E7;
+  color: #fff;
+  overflow: hidden;
   width: 80%;
   height: 2em;
   font-size: 2em;
@@ -121,40 +117,39 @@
 }
 
 #submit_btn:active {
-	border-color: #EAEAEA;
-	color: #fff;
+  border-color: #EAEAEA;
+  color: #fff;
 }
 
 #submit_btn:hover {
-	background: #FF5300;
+  background: #FF5300;
 }
 
 #submit_btn:before {
-	position: absolute;
-	height: 100%;
-	font-size: 125%;
-	line-height: 3.5;
-	color: #fff;
-	// -webkit-transition: all 0.3s;
-	// -moz-transition: all 0.3s;
-	// transition: all 0.3s;
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #fff;
+  // -webkit-transition: all 0.3s;
+  // -moz-transition: all 0.3s;
+  // transition: all 0.3s;
 }
 
 #submit_btn:active:before {
-	color: #FF5300;
+  color: #FF5300;
 }
 
 #submit_btn:before {
-	left: 70%;
-	opacity: 0;
-	top: 0;
+  left: 70%;
+  opacity: 0;
+  top: 0;
 }
 
 #submit_btn:hover:before {
-	left: 80%;
-	opacity: 1;
+  left: 80%;
+  opacity: 1;
 }
-
 // .input {
 // 	position: relative;
 // 	z-index: 1;
@@ -166,51 +161,57 @@
 // }
 
 .textbox-input input {
-	// position: relative;
-	// display: block;
-	// float: right;
-	padding: 0.2em;
-	width: 100%;
-	border: none;
-  outline: none;
-	border-radius: 0;
-	background: #f0f0f0;
-	color: #FF5300;
-	font-weight: 400;
-	font-family: 'Karla', sans-serif;
-	-webkit-appearance: none; /* for box shadows to show on iOS */
+  // position: relative;
+  // display: block;
+  // float: right;
+  padding: 0.2em;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #FF5300;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
+  -webkit-appearance: none;
+  /* for box shadows to show on iOS */
 }
 
 .input__field:focus {
-	outline-color: #FF5300;
+  outline-color: #FF5300;
   border: none;
 }
-
-
 // MENU CSS
-
 /* The Overlay (background) */
 .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(255, 82, 13); /* White fallback colour */
-    background-color: rgba(255, 82, 13, 0.9); /* White w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(255, 82, 13);
+  /* White fallback colour */
+  background-color: rgba(255, 82, 13, 0.9);
+  /* White w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay */
 }
-
 /* Position the content inside the overlay */
 .overlay-content {
-    position: relative;
-    color: #fff;
-    top: 15%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  position: relative;
+  color: #fff;
+  top: 15%;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  text-align: center;
+  /* Centered text/links */
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
 .menu-bar {
@@ -246,9 +247,7 @@
   // height: 3em;
   height: 7%;
 }
-
 // FONTAWESOME ICONS
-
 i {
   font-size: 20em;
   padding-left: 0.3em;
@@ -264,54 +263,59 @@ i.fa.fa-times-circle {
   color: #FFC5AD;
 }
 
+i.fa.fa-star-o, i.fa.fa-star {
+  font-size: 1.2em;
+  color: #fff;
+}
+
 /* The navigation links inside the overlay */
 .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-family: 'Karla', sans-serif;
-    font-size: 3em;
-    color: #fff;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (colour) */
+  padding: 8px;
+  text-decoration: none;
+  font-family: 'Karla', sans-serif;
+  font-size: 4em;
+  color: #fff;
+  display: block;
+  /* Display block instead of inline */
+  transition: 0.3s;
+  /* Transition effects on hover (colour) */
 }
-
 /* When you mouse over the navigation links, change their colour */
-.overlay a:hover, .overlay a:focus {
-    color: #BEBEBE;
+.overlay a:focus,
+.overlay a:hover {
+  color: #BEBEBE;
 }
-
 /* Position the close button (top right corner) */
 .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-family: 'Karla', sans-serif;
-    font-size: 60px;
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-family: 'Karla', sans-serif;
+  font-size: 60px;
 }
-
 // The autocomplete suggestions drop-down
-.pac-container {
+.pac-container {}
 
-}
-.pac-item, .pac-item-query {
+.pac-item,
+.pac-item-query {
   font-family: 'Karla', sans-serif;
   font-size: 1rem;
 }
+
 .pac-icon {
   display: none;
 }
-
 // The search bar and button
 .top-input {
   display: flex;
 }
 
-.input-text, .input-button {
+.input-button,
+.input-text {
   height: 3rem;
   border: none;
   border-radius: 0;
 }
-
 
 .input-text {
   padding-left: 1rem;
@@ -327,17 +331,18 @@ i.fa.fa-times-circle {
   flex: 1;
   font-size: 1rem;
 }
-
-
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-        font-family: 'Karla', sans-serif;
-        font-size: 40px;
-        // top: 15px;
-        right: 35px;
-    }
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .closebtn {
+    font-family: 'Karla', sans-serif;
+    font-size: 40px;
+    // top: 15px;
+    right: 35px;
+  }
 }
 
 .index-container {
@@ -345,9 +350,7 @@ i.fa.fa-times-circle {
   flex-direction: column;
   height: 93%;
 }
-
 /* PIANO TILE STYLE */
-
 #tile {
   flex: 0;
   transition: 1s;
@@ -360,15 +363,46 @@ i.fa.fa-times-circle {
   height: 200px;
 }
 
+.tile-contents {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .tile-header {
   display: flex;
-   -webkit-flex-direction: row;
-   flex-direction: row;
-   -webkit-align-items: center;
-   justify-content: center;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  justify-content: center;
   background-color: #ff5300;
   height: 80px;
   padding-left: 0.3em;
+}
+
+.tile-footer {
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding-bottom: 0.3em;
+}
+
+.tile-btn {
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  background-color: #ff5300;
+  border-radius: 2em;
+  padding: 0.5em;
+  color: white;
+
 }
 
 .tile-close {
@@ -413,4 +447,9 @@ i.fa.fa-times-circle {
   font-size: 1em;
   padding-left: 1em;
   padding-right: 1em;
+  flex: 1;
+}
+
+span {
+  cursor: default;
 }

@@ -13,7 +13,7 @@
 //= require rails-ujs
 
 //= require 'jquery.js'
-//= require 'underscore.js'
+//= require 'underscorsdfe.js'
 //= require 'handlebars.js'
 
 //= require 'map_render.js'

@@ -27,9 +27,11 @@ class PianosController < ApplicationController
   end
 
   def new
+    authorize
   end
 
   def create
+    authorize
     piano = Piano.new
     piano.address = params[:address]
     piano.access_description = params[:accessDescription]

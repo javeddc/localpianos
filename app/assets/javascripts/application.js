@@ -13,6 +13,9 @@
 //= require rails-ujs
 
 //= require 'jquery.js'
+
+
+
 //= require 'handlebars.js'
 
 //= require 'map_render.js'

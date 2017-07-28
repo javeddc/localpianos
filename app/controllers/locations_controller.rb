@@ -24,14 +24,22 @@ class LocationsController < ApplicationController
     result_location = Geocoder.search(params[:searchString])[0]
     render json: {
       result: Piano.near(params[:searchString], 20),
-      center: {latitude: result_location.latitude, longitude: result_location.longitude}
+      center: {latitude: result_location.latitude, longitude: result_location.longitude},
+      star_ids: current_user
+      # {Star.where(user_id: current_user)}
     }.to_json
 
   end
 
   def search_coordinates
+    star_ids = []
+    Star.where(user_id: current_user.id).each do |star|
+      star_ids.push star.piano_id
+    end
+
     render json: {
-      result: Piano.near([params[:latitude], params[:longitude]], 20)
+      result: Piano.near([params[:latitude], params[:longitude]], 20),
+      star_ids: star_ids
     }.to_json
     # render html: params[:latitude] + 'sdf'
   end

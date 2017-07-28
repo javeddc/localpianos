@@ -20,8 +20,9 @@ function searchCoordinates(input_latitude, input_longitude) {
     }
   }
   $.ajax(settings).done(function (result) {
-
+    console.log(result);
     piano_locations = result.result;
+    star_ids = result.star_ids;
     console.log(piano_locations);
     piano_locations.forEach(function (piano) {
       var marker = new google.maps.Marker({
@@ -36,6 +37,10 @@ function searchCoordinates(input_latitude, input_longitude) {
       } else {
         marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
       };
+      if (_.contains(star_ids, piano.id)) {
+        marker.setIcon('http://maps.google.com/mapfiles/kml/paddle/orange-stars.png')
+        console.log('inside');
+      }
       marker.addListener("click", function() {
         popTile(piano);
       })

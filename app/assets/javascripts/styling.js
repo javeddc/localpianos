@@ -1,4 +1,3 @@
-
 var tileClosed = true
 
 function openNav() {
@@ -10,12 +9,7 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 
-
-
-
-
 /* Markup for the Piano Tile Slider */
-
 function openTile() {
     document.getElementById("tile").style.flex = 1;
     tileClosed = false;

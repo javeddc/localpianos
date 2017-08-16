@@ -14,7 +14,7 @@ $(document).ready(function() {
 var map
 
 function myMap(latitude, longitude) {
-  var piano_locations
+  // var piano_locations
   var mapProp = {
     center: new google.maps.LatLng(latitude, longitude),
     zoom: 13,

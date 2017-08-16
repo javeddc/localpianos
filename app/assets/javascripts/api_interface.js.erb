@@ -12,6 +12,8 @@ function locationSearch() {
 $('#search_btn').click(locationSearch)
 
 var markers = [];
+var piano_locations;
+var starIds;
 
 var setMapOnAll = function(map) {
   for (var i = 0; i < markers.length; i++) { markers[i].setMap(map); }
@@ -27,10 +29,9 @@ function searchCoordinates(inputLatitude, inputLongitude) {
     }
   }
   $.ajax(settings).done(function(result) {
-    console.log(result);
+    markers = [];
     piano_locations = result.result;
-    star_ids = result.star_ids;
-    console.log(piano_locations);
+    starIds = result.starIds;
     _.each(piano_locations, function(piano) {
       var marker = new google.maps.Marker({
         position: {
@@ -43,14 +44,12 @@ function searchCoordinates(inputLatitude, inputLongitude) {
       if (piano.category === "private") {
         marker.setIcon('<%= asset_url "BlueMarker.png" %>')
       }
-      else if (_.contains(star_ids, piano.id)) {
-        marker.setIcon('<%= asset_url "StarMarker.png" %>')
-        console.log('inside');
-      }
       else {
         marker.setIcon('<%= asset_url "RedMarker.png" %>')
       };
-
+      if (_.contains(starIds, piano.id)) {
+        marker.setIcon('<%= asset_url "StarMarker.png" %>')
+      }
       setMapOnAll(map);
       marker.addListener("click", function() {
       setMapOnAll(null);
@@ -61,9 +60,44 @@ function searchCoordinates(inputLatitude, inputLongitude) {
   });
 }
 
+function starSnack() {
+    var x = document.getElementById("snack-star")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function redrawMarkers() {
+  setMapOnAll(null);
+  markers = []
+  _.each(piano_locations, function(piano) {
+    var marker = new google.maps.Marker({
+      position: {
+        lat: piano.latitude,
+        lng: piano.longitude
+      },
+      map: map
+    });
+    markers.push(marker);
+    if (piano.category === "private") {
+      marker.setIcon('<%= asset_url "BlueMarker.png" %>')
+    }
+    else {
+      marker.setIcon('<%= asset_url "RedMarker.png" %>')
+    };
+    if (_.contains(starIds, piano.id)) {
+      marker.setIcon('<%= asset_url "StarMarker.png" %>')
+    }
+    setMapOnAll(map);
+    marker.addListener("click", function() {
+    setMapOnAll(null);
+    marker.setMap(map);
+    popTile(piano);
+    })
+  })
+}
+
 function toggleStar(pianoId) {
   toggleTileStar();
-  console.log(pianoId);
   var settings = {
     url: '/api_star_toggle',
     data: {
@@ -71,6 +105,14 @@ function toggleStar(pianoId) {
     }
   }
   $.ajax(settings).done(function(result) {
-    console.log(result);
+    // starIds.push(pianoId)
+    var starIndex = _.indexOf(starIds, pianoId);
+    if (starIndex == -1) {
+      starIds.push(pianoId);
+    } else {
+      starIds.splice(starIndex, 1);
+    }
+    starSnack();
+    redrawMarkers();
   })
 }

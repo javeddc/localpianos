@@ -18,7 +18,6 @@
 
 
 //= require 'handlebars.js'
-
 //= require 'map_render.js'
 //= require 'api_interface.js'
 //= require 'styling.js'

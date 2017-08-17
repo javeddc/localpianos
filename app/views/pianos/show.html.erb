@@ -18,7 +18,7 @@ Signed in as
 <% end %>
 <br>
 
-<div>
+<!-- <div>
   <div class="demo">
     <div id="lightgallery">
       <a  href="http://lorempixel.com/400/200/">
@@ -33,7 +33,7 @@ Signed in as
 
     </div>
   </div>
-</div>
+</div> -->
 
 <% if (photo = PianoPhoto.find_by(piano_id:@piano.id)) %>
 <img src="<%= photo.image_url %>" width=400>

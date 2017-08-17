@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   # user-facing routes:
+
   get '/' => 'pianos#index'
   get '/pianos' => 'pianos#index'
-  # get '/pianos/:id', to: 'pianos#show', as: 'piano'
   resources :pianos do
     resources :comments, shallow: true
     resources :flags, shallow: true
     resources :stars, shallow: true
     resources :piano_photos, shallow: true
   end
-# , only: %i[index new create destroy show]
-
+  
+  # needed?
   post '/piano_photos' => 'piano_photos#post'
 
   get '/about' => 'pianos#about'

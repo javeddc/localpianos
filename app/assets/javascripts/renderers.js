@@ -17,8 +17,8 @@ function popTile(obj) {
     tileClosed = false
   }
   window.setTimeout(function() {
-    map.setCenter({lat: (obj.latitude - 0.005), lng: obj.longitude});
-    map.setZoom(15);
+    map.setCenter({lat: (obj.latitude - (0.003 + (0.0005 * map.getZoom()))), lng: obj.longitude});
+    // map.setZoom(15);
   }, 500)
 
   tile.innerHTML = (template(obj))

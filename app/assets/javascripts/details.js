@@ -10,14 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require jquery
 //= require 'underscore.js'
-
-
-
 //= require 'handlebars.js'
-//= require 'map_render.js'
-//= require 'api_interface.js'
-
-//= require 'renderers.js'
+//= require 'comments.js'
+//= require 'lightgallery.min.js'

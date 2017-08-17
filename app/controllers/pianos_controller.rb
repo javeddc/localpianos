@@ -4,20 +4,18 @@ class PianosController < ApplicationController
     # CHANGE LINE BELOW FOR DEPLOYMENT!!
     user_location = Geocoder.search(request.remote_ip)[0]
     # user_location = Geocoder.search("125.253.50.72")[0]
-
     @coordinates = { latitude: user_location.latitude, longitude: user_location.longitude }
-
     if user_location.country_code == "RD" || user_location.country_code == ""
       @coordinates = { latitude: -37.8196, longitude: 144.9631 }
     end
-
     @city = request.location.city
     @pianos = Piano.all
   end
 
   def show
     @piano = Piano.find(params[:id])
-    @nearbys = @piano.nearbys(8)
+    @comments = Comment.where(piano_id: params[:id])
+    @nearbys = @piano.nearbys(4)
   end
 
   def map_me

@@ -489,16 +489,16 @@ span {
 
 #snack-star.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: enterin 0.5s, fadeout 0.5s 2.5s;
+    animation: enterin 0.5s, fadeout 0.5s 2.5s;
 }
 
-@-webkit-keyframes fadein {
+@-webkit-keyframes enterin {
     from {top: 0; opacity: 0;}
     to {top: 30px; opacity: 1;}
 }
 
-@keyframes fadein {
+@keyframes enterin {
     from {top: 0; opacity: 0;}
     to {top: 30px; opacity: 1;}
 }
@@ -511,4 +511,46 @@ span {
 @keyframes fadeout {
     from {top: 30px; opacity: 1;}
     to {top: 0; opacity: 0;}
+}
+
+#tile {
+    visibility: hidden;
+    background-color: #aaa;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    z-index: 10;
+    // left: 50%;
+    // transform: translateX(-50%);
+    bottom: 0.6rem;
+    right: 0.6rem;
+    left: 0.6rem;
+    -webkit-animation: exitout 0.5s;
+    animation: exitout 0.5s;
+}
+
+#tile.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes exitout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes exitout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }

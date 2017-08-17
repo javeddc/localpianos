@@ -1,15 +1,44 @@
-<h4>Piano near <%= @piano.address.capitalize %></h4>
+<%= javascript_include_tag 'details', "data-turbolinks-track" => "reload" %>
+
+<input type="hidden" id="pianoId" value="<%=
+@piano.id %>">
+
+<h4>Piano near
+  <%= @piano.address.capitalize %></h4>
 
 <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+Signed in as
+<%= current_user.email %>
+|
+<%= link_to "Logout", '/logout' %>
 <% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<%= link_to 'Login', '/login' %>
+|
+<%= link_to 'Signup', '/signup' %>
 <% end %>
 <br>
 
+<div>
+  <div class="demo">
+    <div id="lightgallery">
+      <a  href="http://lorempixel.com/400/200/">
+        <img src="http://lorempixel.com/400/200/">
+      </a>
+      <a  href="http://lorempixel.com/400/200/">
+        <img src="http://lorempixel.com/400/200/">
+      </a>
+      <a  href="http://lorempixel.com/400/200/">
+        <img src="http://lorempixel.com/400/200/">
+      </a>
+
+    </div>
+  </div>
+</div>
+
 <% if (photo = PianoPhoto.find_by(piano_id:@piano.id)) %>
-  <img src="<%= photo.image_url %>" width=400>
+<img src="<%= photo.image_url %>" width=400>
 <% end %>
+<%= link_to 'Add your own photo of this piano!', edit_piano_photo_path %>
 
 <h6><%= @piano.latitude %></h6>
 <h6><%= @piano.longitude %></h6>
@@ -20,9 +49,40 @@
 <h6><%= @piano.access_description %></h6>
 <h6><%= @piano.updated_at %></h6>
 
-<h4>Other pianos nearby: (8miles)</h4>
+<h4>Comments:</h4>
+<div id="comment-box">
+  <p>Be the first to make a comment on this piano! Comments help others know more about this piano, and whether anything has changed since it was added.
+  </p>
+</div>
+
+<% if current_user %>
+<div class="add-comment">
+  <textarea id="comment-input" type="text" placeholder="Add your comment here. If you have visited this piano, we'd love to know about it!"></textarea>
+  <button id="post-btn" onclick="postComment()">Post Comment</button>
+</div>
+<% else %>
+<p><%= link_to 'Login', '/login' %>
+  or
+  <%= link_to 'sign up', '/signup' %>
+  to add your comments.</p>
+<% end %>
+
+<h4>Other pianos nearby: (~5km)</h4>
 
 <% @nearbys.each do |nearby| %>
-  <%= link_to "Piano near #{nearby.address}", piano_path(nearby) %>
-  <br>
+<%= link_to "Piano near #{nearby.address}", piano_path(nearby) %>
+<br>
 <% end %>
+
+<script type="template" id="comment-template">
+  <div class="comment">
+
+    <div class="avatar" style="background-image: {{ image }};">
+      <h6>{{ username }}
+        :</h6>
+      <p>{{ body }}</p>
+      <span>
+        {{ datestring }}
+      </span>
+    </div>
+  </script>

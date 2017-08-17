@@ -1,5 +1,6 @@
 <input type="hidden" id="coordinates" value="<%=
 @coordinates.to_json %>">
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 <div class="index-container">
   <div class="top-input">
@@ -9,11 +10,10 @@
 
   <div id="googleMap" style="position: relative; overflow: hidden;"></div>
 
-  <div id="tile">
-    <!-- <p>Your piano details</p> -->
-  </div>
+
 </div>
 
+<div id="tile"></div>
 <div id="snack-star">Piano added to favourites!</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>
@@ -51,6 +51,10 @@
         <span id="star-text">Add to Favourites</span>
         <i class="fa fa-star" id="star-icon"></i>
     </div>
+    <a href="./pianos/{{ id }}">
+        <span id="star-text">View Details</span>
+        <i class="fa fa-star" id="star-icon"></i>
+    </a>
     </div>
   </div>
 </script>

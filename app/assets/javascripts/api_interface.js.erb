@@ -7,6 +7,7 @@ function locationSearch() {
   }
   $.ajax(settings).done(function(result) {
     console.log(result);
+    // TODO 
   })
 }
 $('#search_btn').click(locationSearch)
@@ -18,7 +19,6 @@ var starIds;
 var setMapOnAll = function(map) {
   for (var i = 0; i < markers.length; i++) { markers[i].setMap(map); }
 };
-
 
 function searchCoordinates(inputLatitude, inputLongitude) {
   var settings = {
@@ -61,9 +61,9 @@ function searchCoordinates(inputLatitude, inputLongitude) {
 }
 
 function starSnack() {
-    var x = document.getElementById("snack-star")
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    var starSnackBar = document.getElementById("snack-star")
+    starSnackBar.className = "show";
+    setTimeout(function(){ starSnackBar.className = starSnackBar.className.replace("show", ""); }, 3000);
 }
 
 function redrawMarkers() {
@@ -89,9 +89,9 @@ function redrawMarkers() {
     }
     setMapOnAll(map);
     marker.addListener("click", function() {
-    setMapOnAll(null);
-    marker.setMap(map);
-    popTile(piano);
+      setMapOnAll(null);
+      marker.setMap(map);
+      popTile(piano);
     })
   })
 }
@@ -105,14 +105,25 @@ function toggleStar(pianoId) {
     }
   }
   $.ajax(settings).done(function(result) {
-    // starIds.push(pianoId)
     var starIndex = _.indexOf(starIds, pianoId);
     if (starIndex == -1) {
+      starSnack();
       starIds.push(pianoId);
     } else {
       starIds.splice(starIndex, 1);
     }
-    starSnack();
+
     redrawMarkers();
   })
+}
+
+function openTile() {
+    document.getElementById("tile").className = "show";
+    tileClosed = false;
+}
+
+function closeTile() {
+    document.getElementById("tile").className = "";
+    setMapOnAll(map);
+    tileClosed = true;
 }

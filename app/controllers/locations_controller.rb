@@ -31,16 +31,16 @@ class LocationsController < ApplicationController
   end
 
   def search_coordinates
-    star_ids = []
+    starIds = []
     if logged_in?
       Star.where(user_id: current_user.id).each do |star|
-        star_ids.push star.piano_id
+        starIds.push star.piano_id
       end
     end
 
     render json: {
       result: Piano.near([params[:latitude], params[:longitude]], 20),
-      star_ids: star_ids
+      starIds: starIds
     }.to_json
     # render html: params[:latitude] + 'sdf'
   end

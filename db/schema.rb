@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725001534) do
+ActiveRecord::Schema.define(version: 20170817081931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer "piano_id"
-    t.integer "user_id"
-    t.text "body"
+    t.integer "piano_id", null: false
+    t.integer "user_id", null: false
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "flags", force: :cascade do |t|
-    t.string "status"
+    t.string "status", null: false
     t.string "category"
     t.integer "user_id"
     t.integer "piano_id"
@@ -34,20 +34,20 @@ ActiveRecord::Schema.define(version: 20170725001534) do
   end
 
   create_table "piano_photos", force: :cascade do |t|
-    t.integer "piano_id"
-    t.text "image_url"
+    t.integer "piano_id", null: false
+    t.text "image_url", null: false
     t.text "caption"
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pianos", force: :cascade do |t|
-    t.float "latitude"
-    t.float "longitude"
+    t.float "latitude", null: false
+    t.float "longitude", null: false
     t.string "address"
     t.string "category"
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.text "location_description"
     t.text "piano_description"
     t.text "access_description"
@@ -56,16 +56,16 @@ ActiveRecord::Schema.define(version: 20170725001534) do
   end
 
   create_table "stars", force: :cascade do |t|
-    t.integer "piano_id"
-    t.integer "user_id"
+    t.integer "piano_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.text "password_digest"
+    t.string "username", null: false
+    t.string "email", null: false
+    t.text "password_digest", null: false
     t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

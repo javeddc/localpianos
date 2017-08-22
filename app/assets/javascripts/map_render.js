@@ -1,17 +1,22 @@
-var coordinates
-
 $(document).ready(function() {
-  coordinates = JSON.parse(document.getElementById('coordinates').value);
-  myMap();
-  searchCoordinates(coordinates.latitude, coordinates.longitude)
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      myMap(position.coords.latitude, position.coords.longitude);
+      searchCoordinates(position.coords.latitude, position.coords.longitude);
+    });
+  } else {
+    var coordinates = JSON.parse(document.getElementById('coordinates').value);
+    myMap(coordinates.latitude, coordinates.longitude);
+    searchCoordinates(coordinates.latitude, coordinates.longitude);
+  }
 });
 
 var map
 
-function myMap() {
-  var piano_locations
+function myMap(latitude, longitude) {
+  // var piano_locations
   var mapProp = {
-    center: new google.maps.LatLng(coordinates.latitude, coordinates.longitude),
+    center: new google.maps.LatLng(latitude, longitude),
     zoom: 13,
     disableDefaultUI: true,
     styles: [{
@@ -148,7 +153,6 @@ function myMap() {
 
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
   var input = document.getElementById('search_string');
-
   var autocomplete = new google.maps.places.Autocomplete(input);
 
   // Bind the map's bounds (viewport) property to the autocomplete object, so that the autocomplete requests use the current map bounds for the bounds option in the request.
@@ -186,8 +190,6 @@ function myMap() {
     marker.setPosition(place.geometry.location);
     marker.setVisible(false);
 
-
-
     searchCoordinates(place.geometry.location.lat(), place.geometry.location.lng())
 
     var address = '';
@@ -198,7 +200,5 @@ function myMap() {
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
     }
-
   });
-
 }

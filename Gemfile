@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails', '~> 4.2.2'
+# gem 'light_gallery_rails', git: 'https://github.com/stNicolaas/light-gallery-rails.git'   
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -10,16 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 
-//= require 'jquery.js'
+//= require jquery
 //= require 'underscore.js'
 
 
 
 //= require 'handlebars.js'
-
 //= require 'map_render.js'
 //= require 'api_interface.js'
-//= require 'styling.js'
+
 //= require 'renderers.js'

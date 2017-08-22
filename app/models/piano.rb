@@ -4,4 +4,13 @@ class Piano < ApplicationRecord
   after_validation :geocode, :if => :address_changed?
   after_validation :reverse_geocode, :if => :longitude_changed?
 
+
+  before_create :randomize_id
+
+  private
+  def randomize_id
+    begin
+      self.id = SecureRandom.random_number(1_000_000)
+    end while User.where(id: self.id).exists?
+  end
 end

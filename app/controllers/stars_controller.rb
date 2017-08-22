@@ -22,7 +22,6 @@ class StarsController < ApplicationController
       result = 'destroyed'
     end
 
-    # render :json {result: result}.to_json
   end
 
 end

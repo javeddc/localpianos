@@ -1,24 +1,21 @@
-# README
+# Pianista
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Access the live version [here](https://shrouded-reaches-65280.herokuapp.com/).
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+Many pianos are chronically under-played. They sit in cafes, libraries, airports, and other public spaces, while many people who can play them can't commit to owning one.
 
-* System dependencies
+Pianista is a platform that maps these publicly accessible pianos and allows users to add and comment on pianos wherever in the world they find them.  A React-based first release is currently in development, which will also allow users to comment, add pictures, and embed audio samples of each piano.
 
-* Configuration
 
-* Database creation
+## Tools used
 
-* Database initialization
+Pianista is a Ruby on Rails application. It uses [Geocoder](https://github.com/alexreisner/geocoder) for handling location information. It also uses jQuery, Underscore.js, and RSpec for basic testing. It's currently hosted on Heroku, using the Puma web server.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributors
 
-* Deployment instructions
+This project builds on an earlier beta, which was produced as part of a group project the Web Development Immersive at GA Melbourne. The contributions of the other group members are visible in the commit history here.
 
-* ...
+If you would like to contribute to developing Pianista, that's great! Please get in touch.

@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     resources :stars, shallow: true
     resources :piano_photos, shallow: true
   end
-  
+
   # needed?
-  post '/piano_photos' => 'piano_photos#post'
+  # post '/piano_photos' => 'piano_photos#post'
 
   get '/about' => 'pianos#about'
   get '/signup' => 'users#new'
@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-
-
 
   # routes for internal API:
   get '/api_nearby' => 'locations#user_location'
@@ -30,12 +28,4 @@ Rails.application.routes.draw do
   get '/api_piano_comments' => 'comments#grab'
   post '/api_piano_comments' => 'comments#create'
 
-  # ## test route for searching
-  # get '/api_search_test' => 'locations#search_test'
-
-  # views for testing locations API, with output:
-  # get '/location' => 'pianos#map_me'
-  # get '/location/:id' => 'pianos#nearbys'
-  ## test view for search_test
-  # get '/search_test' => 'pianos#search_test'
 end

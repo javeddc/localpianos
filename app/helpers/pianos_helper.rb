@@ -1,9 +1,10 @@
 module PianosHelper
   def capitalize_all(str)
+    result_arr = []
     arr = str.split(" ").each do |word|
-      word.capitalize
+      result_arr.push word.capitalize
     end
-    arr.join(" ")
+    result_arr.join(" ")
   end
-  # helper_method :capitalize_all
+
 end

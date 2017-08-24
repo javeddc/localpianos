@@ -1,9 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-# CANT CREATE WITHOUT USERNAME
-# CANT CREATE WITHOUT VALID EMAIL
-# CANT CREATE WITHOUT PASSWORD DIGEST
-# HAS LONG ID ONCE CREATED
-#
+
 end

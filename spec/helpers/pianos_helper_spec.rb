@@ -11,5 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe PianosHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "capitalize all" do
+    it "capitalizes each word in a string" do
+      expect(helper.capitalize_all("259 wellesby street, south yarra")).to eq("259 Wellesby Street, South Yarra")
+    end
+  end
 end

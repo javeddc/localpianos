@@ -1,5 +1,5 @@
 class PianosController < ApplicationController
-  
+
 
 
   def index
@@ -43,6 +43,17 @@ class PianosController < ApplicationController
     end
     piano.save
     redirect_to '/pianos'
+  end
+
+  def favourites
+    authorize
+    stars = Star.where(user_id: session[:user_id])
+    @favourites = []
+    stars.each do |star|
+      @favourites.push Piano.find(star.piano_id)
+      # @favourites.push {latitude: piano.latitude, longitude: piano.longitude, address: piano.address}
+    end
+    render :favourites
   end
 
 end

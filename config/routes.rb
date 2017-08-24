@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # user-facing routes:
 
+  # user-facing routes:
   get '/' => 'pianos#index'
   get '/pianos' => 'pianos#index'
   resources :pianos do
@@ -9,16 +9,17 @@ Rails.application.routes.draw do
     resources :stars, shallow: true
     resources :piano_photos, shallow: true
   end
-
-  # needed?
-  # post '/piano_photos' => 'piano_photos#post'
-
   get '/about' => 'pianos#about'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  get '/favourites' => 'pianos#favourites'
+
+  # needed?
+  # post '/piano_photos' => 'piano_photos#post'
+
 
   # routes for internal API:
   get '/api_nearby' => 'locations#user_location'
@@ -27,5 +28,8 @@ Rails.application.routes.draw do
   get '/api_star_toggle' => 'stars#toggle'
   get '/api_piano_comments' => 'comments#grab'
   post '/api_piano_comments' => 'comments#create'
+
+  # run before each heroku deploy
+  # bundle exec rake assets:precompile
 
 end

@@ -16,6 +16,10 @@
 <div id="tile"></div>
 <div id="snack-star">Piano added to favourites!</div>
 
+<a href="/pianos/new" class="btn-floating floating-right"><i class="fa fa-plus"></i></a>
+<a onclick="locateMe()" class="btn-floating floating-left"><i class="fa fa-crosshairs"></i></a>
+
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASps5hTZ-16jFKeoywD5bycvwAt0VQp9c&libraries=places"></script>
 
 <script type="template" id="tile-template">
@@ -36,8 +40,8 @@
     </div>
     <div class="tile-body">
       <div class="piano-category">
-        Category:
-        {{ category }}
+        <span class="caps-me">Category:
+        {{ category }}</span>
       </div>
       <div class="piano-location-description">
         {{ location_description }}</div>

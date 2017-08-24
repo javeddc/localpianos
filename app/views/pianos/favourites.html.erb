@@ -1,0 +1,8 @@
+<div class="details-container">
+  <h2>Here are pianos you've saved:</h2>
+
+  <% @favourites.each do |piano| %>
+  <%= link_to "Piano near #{piano.address}", piano_path(piano) %>
+  <br>
+  <% end %>
+</div>

@@ -17,9 +17,10 @@
 
         <a href="/"><i class="fa fa-home"></i> Home</a>
         <a href="/about"><i class="fa fa-file-text"></i> About</a>
-        <a href="/new"><i class="fa fa-music"></i> Add Piano</a>
+        <a href="/pianos/new"><i class="fa fa-music"></i> Add Piano</a>
 
         <% if logged_in? %>
+        <a href="/favourites"><i class="fa fa-star"></i> View My Favorites</a>
         <a href="/logout"><i class="fa fa-user"></i> Log Out</a>
         <% else %>
         <a href="/login"><i class="fa fa-user"></i> Log In</a>
@@ -35,8 +36,8 @@
       <span onclick="openNav()" class="menu-bar">
         <i class="fa fa-bars"></i>
       </span>
-      <div class="menu-title">
-        Pianista</div>
+      <a href="/"><div class="menu-title">
+        Pianista</div></a>
       <span class="menu-rhs"></span>
 
     </div>
